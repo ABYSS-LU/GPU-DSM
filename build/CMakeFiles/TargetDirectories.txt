@@ -1,0 +1,3 @@
+/data01/home/lumeijun/dsm/build/CMakeFiles/rebuild_cache.dir
+/data01/home/lumeijun/dsm/build/CMakeFiles/edit_cache.dir
+/data01/home/lumeijun/dsm/build/CMakeFiles/dsm_demo.dir
