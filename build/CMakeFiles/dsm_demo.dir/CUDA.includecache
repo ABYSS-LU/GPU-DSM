@@ -31,6 +31,8 @@ cuda_runtime.h
 -
 stdexcept
 -
+cstdint
+-
 
 /data01/home/lumeijun/dsm/dummy.cu
 
