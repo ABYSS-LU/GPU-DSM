@@ -4,7 +4,7 @@
 # compile CUDA with /usr/local/cuda/bin/nvcc
 CUDA_DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
 
-CUDA_INCLUDES = -isystem=/usr/local/cuda/include -isystem=/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem=/usr/lib/x86_64-linux-gnu/openmpi/include -isystem=/usr/local/nvshmem/include
+CUDA_INCLUDES = -I/data01/home/lumeijun/dsm/src -isystem=/usr/local/cuda/include -isystem=/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem=/usr/lib/x86_64-linux-gnu/openmpi/include -isystem=/usr/local/nvshmem/include
 
 CUDA_FLAGS =  --generate-code=arch=compute_80,code=[compute_80,sm_80] -Xcompiler -pthread -std=c++11
 

@@ -72,7 +72,8 @@ CMAKE_BINARY_DIR = /data01/home/lumeijun/dsm/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/dsm_demo.dir/all
+all: CMakeFiles/dsm_global_array_demo.dir/all
+all: CMakeFiles/dsm_legacy_demo.dir/all
 
 .PHONY : all
 
@@ -82,36 +83,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/dsm_demo.dir/clean
+clean: CMakeFiles/dsm_global_array_demo.dir/clean
+clean: CMakeFiles/dsm_legacy_demo.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/dsm_demo.dir
+# Target rules for target CMakeFiles/dsm_global_array_demo.dir
 
 # All Build rule for target.
-CMakeFiles/dsm_demo.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/data01/home/lumeijun/dsm/build/CMakeFiles --progress-num=1,2,3,4 "Built target dsm_demo"
-.PHONY : CMakeFiles/dsm_demo.dir/all
+CMakeFiles/dsm_global_array_demo.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/data01/home/lumeijun/dsm/build/CMakeFiles --progress-num=1,2,3,4 "Built target dsm_global_array_demo"
+.PHONY : CMakeFiles/dsm_global_array_demo.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/dsm_demo.dir/rule: cmake_check_build_system
+CMakeFiles/dsm_global_array_demo.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /data01/home/lumeijun/dsm/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dsm_demo.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dsm_global_array_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /data01/home/lumeijun/dsm/build/CMakeFiles 0
-.PHONY : CMakeFiles/dsm_demo.dir/rule
+.PHONY : CMakeFiles/dsm_global_array_demo.dir/rule
 
 # Convenience name for target.
-dsm_demo: CMakeFiles/dsm_demo.dir/rule
+dsm_global_array_demo: CMakeFiles/dsm_global_array_demo.dir/rule
 
-.PHONY : dsm_demo
+.PHONY : dsm_global_array_demo
 
 # clean rule for target.
-CMakeFiles/dsm_demo.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/clean
-.PHONY : CMakeFiles/dsm_demo.dir/clean
+CMakeFiles/dsm_global_array_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/clean
+.PHONY : CMakeFiles/dsm_global_array_demo.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/dsm_legacy_demo.dir
+
+# All Build rule for target.
+CMakeFiles/dsm_legacy_demo.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/data01/home/lumeijun/dsm/build/CMakeFiles --progress-num=5,6,7,8 "Built target dsm_legacy_demo"
+.PHONY : CMakeFiles/dsm_legacy_demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/dsm_legacy_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /data01/home/lumeijun/dsm/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dsm_legacy_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /data01/home/lumeijun/dsm/build/CMakeFiles 0
+.PHONY : CMakeFiles/dsm_legacy_demo.dir/rule
+
+# Convenience name for target.
+dsm_legacy_demo: CMakeFiles/dsm_legacy_demo.dir/rule
+
+.PHONY : dsm_legacy_demo
+
+# clean rule for target.
+CMakeFiles/dsm_legacy_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/clean
+.PHONY : CMakeFiles/dsm_legacy_demo.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

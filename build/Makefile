@@ -130,71 +130,114 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named dsm_demo
+# Target rules for targets named dsm_global_array_demo
 
 # Build rule for target.
-dsm_demo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dsm_demo
-.PHONY : dsm_demo
+dsm_global_array_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dsm_global_array_demo
+.PHONY : dsm_global_array_demo
 
 # fast build rule for target.
-dsm_demo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/build
-.PHONY : dsm_demo/fast
+dsm_global_array_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/build
+.PHONY : dsm_global_array_demo/fast
 
-dsm_demo.o: dsm_demo.cu.o
+#=============================================================================
+# Target rules for targets named dsm_legacy_demo
 
-.PHONY : dsm_demo.o
+# Build rule for target.
+dsm_legacy_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dsm_legacy_demo
+.PHONY : dsm_legacy_demo
 
-# target to build an object file
-dsm_demo.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/dsm_demo.cu.o
-.PHONY : dsm_demo.cu.o
+# fast build rule for target.
+dsm_legacy_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/build
+.PHONY : dsm_legacy_demo/fast
 
-dsm_demo.i: dsm_demo.cu.i
+examples/global_array_demo.o: examples/global_array_demo.cu.o
 
-.PHONY : dsm_demo.i
-
-# target to preprocess a source file
-dsm_demo.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/dsm_demo.cu.i
-.PHONY : dsm_demo.cu.i
-
-dsm_demo.s: dsm_demo.cu.s
-
-.PHONY : dsm_demo.s
-
-# target to generate assembly for a file
-dsm_demo.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/dsm_demo.cu.s
-.PHONY : dsm_demo.cu.s
-
-dummy.o: dummy.cu.o
-
-.PHONY : dummy.o
+.PHONY : examples/global_array_demo.o
 
 # target to build an object file
-dummy.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/dummy.cu.o
-.PHONY : dummy.cu.o
+examples/global_array_demo.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/examples/global_array_demo.cu.o
+.PHONY : examples/global_array_demo.cu.o
 
-dummy.i: dummy.cu.i
+examples/global_array_demo.i: examples/global_array_demo.cu.i
 
-.PHONY : dummy.i
+.PHONY : examples/global_array_demo.i
 
 # target to preprocess a source file
-dummy.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/dummy.cu.i
-.PHONY : dummy.cu.i
+examples/global_array_demo.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/examples/global_array_demo.cu.i
+.PHONY : examples/global_array_demo.cu.i
 
-dummy.s: dummy.cu.s
+examples/global_array_demo.s: examples/global_array_demo.cu.s
 
-.PHONY : dummy.s
+.PHONY : examples/global_array_demo.s
 
 # target to generate assembly for a file
-dummy.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_demo.dir/build.make CMakeFiles/dsm_demo.dir/dummy.cu.s
-.PHONY : dummy.cu.s
+examples/global_array_demo.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/examples/global_array_demo.cu.s
+.PHONY : examples/global_array_demo.cu.s
+
+examples/legacy_demo.o: examples/legacy_demo.cu.o
+
+.PHONY : examples/legacy_demo.o
+
+# target to build an object file
+examples/legacy_demo.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/examples/legacy_demo.cu.o
+.PHONY : examples/legacy_demo.cu.o
+
+examples/legacy_demo.i: examples/legacy_demo.cu.i
+
+.PHONY : examples/legacy_demo.i
+
+# target to preprocess a source file
+examples/legacy_demo.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/examples/legacy_demo.cu.i
+.PHONY : examples/legacy_demo.cu.i
+
+examples/legacy_demo.s: examples/legacy_demo.cu.s
+
+.PHONY : examples/legacy_demo.s
+
+# target to generate assembly for a file
+examples/legacy_demo.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/examples/legacy_demo.cu.s
+.PHONY : examples/legacy_demo.cu.s
+
+src/dummy.o: src/dummy.cu.o
+
+.PHONY : src/dummy.o
+
+# target to build an object file
+src/dummy.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/src/dummy.cu.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/src/dummy.cu.o
+.PHONY : src/dummy.cu.o
+
+src/dummy.i: src/dummy.cu.i
+
+.PHONY : src/dummy.i
+
+# target to preprocess a source file
+src/dummy.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/src/dummy.cu.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/src/dummy.cu.i
+.PHONY : src/dummy.cu.i
+
+src/dummy.s: src/dummy.cu.s
+
+.PHONY : src/dummy.s
+
+# target to generate assembly for a file
+src/dummy.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_global_array_demo.dir/build.make CMakeFiles/dsm_global_array_demo.dir/src/dummy.cu.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsm_legacy_demo.dir/build.make CMakeFiles/dsm_legacy_demo.dir/src/dummy.cu.s
+.PHONY : src/dummy.cu.s
 
 # Help Target
 help:
@@ -204,13 +247,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... dsm_demo"
-	@echo "... dsm_demo.o"
-	@echo "... dsm_demo.i"
-	@echo "... dsm_demo.s"
-	@echo "... dummy.o"
-	@echo "... dummy.i"
-	@echo "... dummy.s"
+	@echo "... dsm_global_array_demo"
+	@echo "... dsm_legacy_demo"
+	@echo "... examples/global_array_demo.o"
+	@echo "... examples/global_array_demo.i"
+	@echo "... examples/global_array_demo.s"
+	@echo "... examples/legacy_demo.o"
+	@echo "... examples/legacy_demo.i"
+	@echo "... examples/legacy_demo.s"
+	@echo "... src/dummy.o"
+	@echo "... src/dummy.i"
+	@echo "... src/dummy.s"
 .PHONY : help
 
 

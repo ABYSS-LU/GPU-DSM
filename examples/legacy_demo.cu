@@ -1,4 +1,5 @@
-#include "dsm_manager.hpp"
+#include "dsm_manager.hpp" // examples/legacy_demo.cu
+
 #include <iostream>
 #include <mpi.h>
 #include <nvshmem.h>
@@ -34,13 +35,14 @@ __global__ void put_kernel(int n, int target_pe) {
 }
 
 int main(int argc, char **argv) {
+    (void)argv;
     MPI_Init(&argc, &argv);
 
     DSMManager::getInstance().init(MPI_COMM_WORLD);
     int mype = DSMManager::getInstance().my_pe();
     int npes = DSMManager::getInstance().n_pes();
 
-    std::cout << "PE " << mype << " of " << npes << " initialized" << std::endl;
+    std::cout << "[legacy] PE " << mype << " of " << npes << " initialized" << std::endl;
 
     try {
         if (npes < 2) {
@@ -56,7 +58,6 @@ int main(int argc, char **argv) {
         cudaStream_t stream;
         cuda_check(cudaStreamCreate(&stream), "cudaStreamCreate");
 
-        // GPU 上初始化数据
         alloc_init_kernel<<<blocks, threads, 0, stream>>>(mype * 10, n);
         cuda_check(cudaGetLastError(), "alloc_init_kernel launch");
         cuda_check(cudaStreamSynchronize(stream), "alloc_init_kernel sync");
@@ -68,7 +69,7 @@ int main(int argc, char **argv) {
             int* ptr = nullptr;
             cuda_check(cudaMemcpyFromSymbol(&ptr, g_dsm_ptr, sizeof(ptr)), "get g_dsm_ptr");
             cuda_check(cudaMemcpy(host_buf_init, ptr, n * sizeof(int), cudaMemcpyDeviceToHost), "copy init");
-            std::cout << "PE 1: 本地初始化数据: ";
+            std::cout << "[legacy] PE 1: 本地初始化数据: ";
             for (int i = 0; i < n; i++) {
                 std::cout << host_buf_init[i] << " ";
             }
@@ -83,10 +84,9 @@ int main(int argc, char **argv) {
             nvshmemx_quiet_on_stream(stream);
             cuda_check(cudaGetLastError(), "put_kernel launch");
             cuda_check(cudaStreamSynchronize(stream), "put_kernel sync");
-            std::cout << "PE 0: put 数据到 PE 1" << std::endl;
+            std::cout << "[legacy] PE 0: put 数据到 PE 1" << std::endl;
         }
 
-        // All PEs must participate in the device-side barrier.
         nvshmemx_barrier_all_on_stream(stream);
         cuda_check(cudaStreamSynchronize(stream), "barrier sync");
         nvshmem_barrier_all();
@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
             int* ptr = nullptr;
             cuda_check(cudaMemcpyFromSymbol(&ptr, g_dsm_ptr, sizeof(ptr)), "get g_dsm_ptr");
             cuda_check(cudaMemcpy(host_buf_put, ptr, n * sizeof(int), cudaMemcpyDeviceToHost), "copy put");
-            std::cout << "PE 1: 远端写入后数据: ";
+            std::cout << "[legacy] PE 1: 远端写入后数据: ";
             for (int i = 0; i < n; i++) {
                 std::cout << host_buf_put[i] << " ";
             }
@@ -112,7 +112,6 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    DSMManager::getInstance().finalize();
     MPI_Finalize();
     return 0;
 }

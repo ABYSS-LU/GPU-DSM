@@ -386,4 +386,4 @@ private:
     unsigned char* pool = nullptr;
 };
 
-#endif // DSM_MANAGER_HPP
+#endif // DSM_MANAGER_HPP (src/dsm_manager.hpp)

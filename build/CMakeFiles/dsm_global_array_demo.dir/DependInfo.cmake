@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CUDA
-  "/data01/home/lumeijun/dsm/dsm_demo.cu" "/data01/home/lumeijun/dsm/build/CMakeFiles/dsm_demo.dir/dsm_demo.cu.o"
-  "/data01/home/lumeijun/dsm/dummy.cu" "/data01/home/lumeijun/dsm/build/CMakeFiles/dsm_demo.dir/dummy.cu.o"
+  "/data01/home/lumeijun/dsm/examples/global_array_demo.cu" "/data01/home/lumeijun/dsm/build/CMakeFiles/dsm_global_array_demo.dir/examples/global_array_demo.cu.o"
+  "/data01/home/lumeijun/dsm/src/dummy.cu" "/data01/home/lumeijun/dsm/build/CMakeFiles/dsm_global_array_demo.dir/src/dummy.cu.o"
   )
 set(CMAKE_CUDA_COMPILER_ID "NVIDIA")
 
@@ -17,6 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CUDA
 
 # The include file search paths:
 set(CMAKE_CUDA_TARGET_INCLUDE_PATH
+  "../src"
   "/usr/local/cuda/include"
   "/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"
   "/usr/lib/x86_64-linux-gnu/openmpi/include"

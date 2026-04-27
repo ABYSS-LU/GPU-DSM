@@ -6,21 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/data01/home/lumeijun/dsm/dsm_demo.cu
-dsm_manager.hpp
-/data01/home/lumeijun/dsm/dsm_manager.hpp
-iostream
--
-mpi.h
--
-nvshmem.h
--
-nvshmemx.h
--
-cuda_runtime.h
--
-
-/data01/home/lumeijun/dsm/dsm_manager.hpp
+../src/dsm_manager.hpp
 mpi.h
 -
 nvshmem.h
@@ -34,7 +20,21 @@ stdexcept
 cstdint
 -
 
-/data01/home/lumeijun/dsm/dummy.cu
+/data01/home/lumeijun/dsm/examples/legacy_demo.cu
+dsm_manager.hpp
+/data01/home/lumeijun/dsm/examples/dsm_manager.hpp
+iostream
+-
+mpi.h
+-
+nvshmem.h
+-
+nvshmemx.h
+-
+cuda_runtime.h
+-
+
+/data01/home/lumeijun/dsm/src/dummy.cu
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h
 stddef.h
